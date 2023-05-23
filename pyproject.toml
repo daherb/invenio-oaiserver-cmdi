@@ -27,5 +27,8 @@ invenio_oaiserver_cmdi = "invenio_oaiserver_cmdi:InvenioOAIServerCMDI"
 invenio_oaiserver_cmdi = "invenio_oaiserver_cmdi.views:blueprint"
 [project.entry-points."invenio_config.module"]
 invenio_oaiserver_cmdi = "invenio_oaiserver_cmdi.config"
-#[project.entry-points."invenio_oai.oais"]
-#invenio_oaiserver_cmdi = "invenio_oaiserver_cmdi.extensions.cmdi"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
