@@ -26,7 +26,7 @@ def cmdi_etree(pid, record):
             cmdi = stream.read()
         return etree.fromstring(bytes(cmdi, "utf-8"))
     # Otherwise return a empty CMD document
-    etree.register_namespace('cmd',"http://www.clarin.eu/cmd/1") #some name
+    etree.register_namespace('cmd',"http://www.clarin.eu/cmd/1")
     root = etree.Element("{http://www.clarin.eu/cmd/1}CMD")
     root.append(etree.Comment(" No CMDI file found in record " + pid_value + " "))
     return root
