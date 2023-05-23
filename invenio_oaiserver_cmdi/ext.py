@@ -21,7 +21,7 @@ class InvenioOAIServerCMDI(object):
     def init_app(self, app):
         """Flask application initialization."""
         self.init_config(app)
-        app.extensions["invenio-previewer-cmdi"] = self
+        app.extensions["invenio-oaiserver-cmdi"] = self
 
     def init_config(self, app):
         """Initialize configuration."""
