@@ -28,9 +28,9 @@ class InvenioOAIServerCMDI(object):
         for k in dir(config):
             app.config.setdefault(k, getattr(config, k))
         # Add CMDI to the metadata formats
-        app.config['OAISERVER_METADATA_FORMATS']["cmdi"] = \
+        app.config.setdefault('OAISERVER_METADATA_FORMATS',{}).update({"cmdi": \
         {
             "serializer": ("invenio_oaiserver_cmdi.oai:cmdi_etree"),
             "schema": "https://infra.clarin.eu/CMDI/1.x/xsd/cmd-envelop.xsd",
             "namespace": "http://www.clarin.eu/cmd/1",
-        }
+        }})
